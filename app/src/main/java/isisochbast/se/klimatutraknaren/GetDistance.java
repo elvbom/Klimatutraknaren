@@ -102,20 +102,17 @@ public class GetDistance extends AsyncTask<String, Void, String> {
         String res[] = result.split(",");
         double dist = Integer.parseInt(res[0])/1000;
 
-        Typeface oswald = Typeface.createFromAsset(mContext.getAssets(), "fonts/oswald/Oswald-Light.ttf");
-        mAvstandTextView.setTypeface(oswald);
-        mTagTextView.setTypeface(oswald);
-        mFlygTextView.setTypeface(oswald);
-//        mBussTextView.setTypeface(oswald);
-//        mBilTextView.setTypeface(oswald);
-        mAvstandTextView.setText(String.format("Du reser %.0f kilometer", dist));
-        mTagTextView.setText(String.format("Tågresa genererar %.2f kg CO2", dist*0.06));
-        mFlygTextView.setText(String.format("Flygresa genererar %.2f kg CO2 ", dist*0.18));
+        Typeface open_sans = Typeface.createFromAsset(mContext.getAssets(), "fonts/Open_Sans/OpenSans-Regular.ttf");
+        mAvstandTextView.setTypeface(open_sans);
+        mTagTextView.setTypeface(open_sans);
+        mFlygTextView.setTypeface(open_sans);
+//        mBussTextView.setTypeface(open_sans);
+//        mBilTextView.setTypeface(open_sans);
+        mAvstandTextView.setText(String.format("Utsläpp per resetyp för en person"));
+        mTagTextView.setText(String.format("Tåg: %.2f kg CO²", dist*0.06));
+        mFlygTextView.setText(String.format("Flyg: %.2f kg CO²", dist*0.18));
         //  mBussTextView.setText(String.format("Buss %s", dist * 0.089));
         //  mBilTextView.setText(String.format("Bil %s", dist * 0.26));
-
     }
-
-
 
 }

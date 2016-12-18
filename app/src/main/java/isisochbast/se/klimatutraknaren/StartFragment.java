@@ -33,8 +33,8 @@ public class StartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_start, container, false);
 
-        Typeface oswald = Typeface.createFromAsset(getContext().getAssets(), "fonts/oswald/Oswald-Bold.ttf");
-        Typeface pasifico = Typeface.createFromAsset(getContext().getAssets(), "fonts/pacifico/Pacifico.ttf");
+        Typeface open_sans = Typeface.createFromAsset(getContext().getAssets(), "fonts/Open_Sans/OpenSans-Regular.ttf");
+        Typeface playfair = Typeface.createFromAsset(getContext().getAssets(), "fonts/Playfair_Display/PlayfairDisplay-Bold.ttf");
 
         mStartEditText = (EditText) view.findViewById(R.id.start_editText);
         mSlutEditText = (EditText) view.findViewById(R.id.slut_editText);
@@ -45,12 +45,12 @@ public class StartFragment extends Fragment {
         mFlygTextView = (TextView) view.findViewById(R.id.flyg);
         mValkommen = (TextView) view.findViewById(R.id.valkommen);
 
-        mValkommen.setTypeface(pasifico);
-        mStartEditText.setTypeface(oswald);
-        mSlutEditText.setTypeface(oswald);
-        mBerakna.setTypeface(oswald);
-        mStartEditText.setTypeface(oswald);
-        mSlutEditText.setTypeface(oswald);
+        mValkommen.setTypeface(playfair);
+        mStartEditText.setTypeface(open_sans);
+        mSlutEditText.setTypeface(open_sans);
+        mBerakna.setTypeface(open_sans);
+        mStartEditText.setTypeface(open_sans);
+        mSlutEditText.setTypeface(open_sans);
 
         try {
             URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.6655101,-73.89188969999998&destinations=40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626&key=YOUR_API_KEYy=AIzaSyCCFP1Zdu51zwsF1x7mRlkRwYbxTwuqvdo");
