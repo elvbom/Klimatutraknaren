@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Trainhack</string>
+    <string name="hint_slut">Jag ska resa till...</string>
+    <string name="hint_start">Jag ska resa från...</string>
+    <string name="text_berakna">Beräkna resans koldioxidutsläpp!</string>
+    <string name="valkommen">Beräkna mina utsläpp</string>
+    <string name="utslapp">Utsläpp </string>
+    <string name="tag">Tåg </string>
+    <string name="bil">Bil </string>
+    <string name="buss">Buss </string>
+    <string name="flyg">Flyg </string>
+    <string name="blabla">\@string/utslapp</string>
+</resources>

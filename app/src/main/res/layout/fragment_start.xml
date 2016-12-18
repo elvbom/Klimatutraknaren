@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="isisochbast.se.klimatutraknaren.StartActivity"
+    android:background="@drawable/b3"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#50FFFFFF"
+        android:padding="50dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/offred"
+            android:layout_margin="15dp"/>
+
+        <TextView
+            android:id="@+id/valkommen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valkommen"
+            android:textSize="32dp"
+            android:textColor="@color/vit"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/start_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_start"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/slut_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_slut"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/berakna_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/offblue"
+            android:background="#95FFFFFF"
+            android:text="@string/text_berakna"
+            android:padding="15dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/offred"
+            android:layout_margin="15dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/avstand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/flyg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/bil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/buss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
