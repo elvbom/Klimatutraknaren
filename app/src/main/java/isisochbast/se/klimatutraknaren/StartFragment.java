@@ -53,7 +53,14 @@ public class StartFragment extends Fragment {
         mSlutEditText.setTypeface(open_sans);
 
         try {
-            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.6655101,-73.89188969999998&destinations=40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626&key=YOUR_API_KEYy=AIzaSyCCFP1Zdu51zwsF1x7mRlkRwYbxTwuqvdo");
+            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/" +
+                    "json?units=imperial&origins=40.6655101,-73.89188969999998&destinations=" +
+                    "40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-" +
+                    "73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-" +
+                    "73.9976592%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-" +
+                    "73.6334271%7C40.598566%2C-73.7527626%7C40.659569%2C-73.933783%7C40.729029%2C-" +
+                    "73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626&key=" +
+                    "YOUR_API_KEYy=AIzaSyCCFP1Zdu51zwsF1x7mRlkRwYbxTwuqvdo");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
         } catch (ProtocolException e) {
@@ -69,14 +76,26 @@ public class StartFragment extends Fragment {
                                         public void onClick(View v) {
                                             mStartDest = mStartEditText.getText().toString();
                                             mSlutDest = mSlutEditText.getText().toString();
+                                            String url_flyg = "https://maps.googleapis.com/maps/api/" +
+                                                    "distancematrix/json?origins=" + mStartDest +
+                                                    "&destinations=" + mSlutDest +
+                                                    "&mode=driving&language=fr-FR&avoid=tolls&key=" +
+                                                    "AIzaSyCCFP1Zdu51zwsF1x7mRlkRwYbxTwuqvdo";
 
-                                            String url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + mStartDest + "&destinations=" + mSlutDest + "&mode=driving&language=fr-FR&avoid=tolls&key=AIzaSyCCFP1Zdu51zwsF1x7mRlkRwYbxTwuqvdo";
+                                            String url_tag = "https://maps.googleapis.com/maps/api/" +
+                                                    "distancematrix/json?origins=" + mStartDest +
+                                                    "&destinations=" + mSlutDest +
+                                                    "&transit_mode=train&language=fr-FR&avoid=tolls&key=" +
+                                                    "AIzaSyCCFP1Zdu51zwsF1x7mRlkRwYbxTwuqvdo";
 
-                                            new GetDistance(StartFragment.this.getContext(), mAvstandTextView, mTagTextView, mFlygTextView).execute(url);
+                                            new GetDistance(StartFragment.this.getContext(),
+                                                    mAvstandTextView,
+                                                    mTagTextView,
+                                                    mFlygTextView)
+                                                    .execute(url_flyg);
                                         }
                                     }
         );
-
         return view;
     }
 
