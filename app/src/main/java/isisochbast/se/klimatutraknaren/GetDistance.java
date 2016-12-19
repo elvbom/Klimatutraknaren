@@ -19,21 +19,20 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by Lovisa on 2016-08-25.
- */
 public class GetDistance extends AsyncTask<String, Void, String> {
+
     private TextView mAvstandTextView;
     private TextView mTagTextView;
     private TextView mFlygTextView;
-
+    private TextView mBilTextView;
     Context mContext;
 
-    public GetDistance(Context mContext, TextView avsTV, TextView tTV, TextView fTV) {
+    public GetDistance(Context mContext, TextView avsTV, TextView tTV, TextView fTV, TextView bTV) {
         this.mContext = mContext;
         this.mAvstandTextView = avsTV;
         this.mTagTextView = tTV;
         this.mFlygTextView = fTV;
+        this.mBilTextView = bTV;
     }
 
     @Override
@@ -98,17 +97,22 @@ public class GetDistance extends AsyncTask<String, Void, String> {
         String res[] = result.split(",");
         double dist = Integer.parseInt(res[0])/1000;
 
-        Typeface open_sans = Typeface.createFromAsset(mContext.getAssets(), "fonts/Open_Sans/OpenSans-Bold.ttf");
+        Typeface open_sans = Typeface.createFromAsset(mContext.getAssets(), "fonts/Open_Sans/OpenSans-Regular.ttf");
         mAvstandTextView.setTypeface(open_sans);
         mTagTextView.setTypeface(open_sans);
         mFlygTextView.setTypeface(open_sans);
-//        mBussTextView.setTypeface(open_sans);
-//        mBilTextView.setTypeface(open_sans);
+        mBilTextView.setTypeface(open_sans);
+
         mAvstandTextView.setText(String.format("Utsläpp per resetyp för en person"));
+        //för ett halvfullt SJ 2000
         mTagTextView.setText(String.format("Tåg: %.5f kg CO²", dist*0.0000021));
+        //för ett flyg fullt till 65%
         mFlygTextView.setText(String.format("Flyg: %.2f kg CO²", dist*0.16));
+        //för bil som drivs av bensin m 2 pers i
+        mBilTextView.setText(String.format("Bil: %.2f kg CO²", dist*0.096));
+
+        //  mBussTextView.setTypeface(open_sans);
         //  mBussTextView.setText(String.format("Buss %s", dist * 0.089));
-        //  mBilTextView.setText(String.format("Bil %s", dist * 0.26));
     }
 
 }

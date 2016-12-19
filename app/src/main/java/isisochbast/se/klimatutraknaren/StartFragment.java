@@ -27,6 +27,7 @@ public class StartFragment extends Fragment {
     private TextView mAvstandTextView;
     private TextView mTagTextView;
     private TextView mFlygTextView;
+    private TextView mBilTextView;
     private TextView mValkommen;
 
     @Override
@@ -43,6 +44,7 @@ public class StartFragment extends Fragment {
         mAvstandTextView = (TextView) view.findViewById(R.id.avstand);
         mTagTextView = (TextView) view.findViewById(R.id.tag);
         mFlygTextView = (TextView) view.findViewById(R.id.flyg);
+        mBilTextView = (TextView) view.findViewById(R.id.bil);
         mValkommen = (TextView) view.findViewById(R.id.valkommen);
 
         mValkommen.setTypeface(playfair);
@@ -91,7 +93,8 @@ public class StartFragment extends Fragment {
                                             new GetDistance(StartFragment.this.getContext(),
                                                     mAvstandTextView,
                                                     mTagTextView,
-                                                    mFlygTextView)
+                                                    mFlygTextView,
+                                                    mBilTextView)
                                                     .execute(url_flyg);
                                         }
                                     }

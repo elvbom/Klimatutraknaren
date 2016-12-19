@@ -27,7 +27,6 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="#70FFFFFF"
             android:padding="50dp">
 
             <View
@@ -66,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:background="#458bd1"
+                android:background="@color/offblue"
                 android:text="@string/text_berakna"
                 android:padding="10dp"
                 android:textSize="16sp"
@@ -113,14 +112,13 @@
                     style="@style/Shadow"/>
 
                 <TextView
-                    android:id="@+id/sum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
                     android:id="@+id/bil"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    style="@style/Shadow"/>
 
                 <TextView
                     android:id="@+id/buss"
